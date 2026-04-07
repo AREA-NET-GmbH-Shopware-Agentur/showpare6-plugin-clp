@@ -1,0 +1,23 @@
+.sw-data-grid {
+    &.is--compact {
+        .sw-data-grid__body {
+            .sw-data-grid__cell-content {
+                height: auto;
+            }
+        }
+    }
+
+    .sw-data-grid__body {
+        .sw-data-grid__cell-content {
+            height: auto;
+        }
+    }
+
+    .sw-data-grid__cell {
+        &.sw-data-grid__cell--text {
+            .sw-data-grid__cell-content {
+                white-space: normal;
+            }
+        }
+    }
+}

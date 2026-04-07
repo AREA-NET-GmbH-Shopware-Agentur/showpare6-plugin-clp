@@ -1,0 +1,67 @@
+{% block sw_product_detail_base_settings_card %}
+    {% parent() %}
+
+    <sw-card :title="$t('sw-product.detail.areanetClpCardLabel')"
+         :isLoading="isLoading"
+         v-if="(areanetClpSystemConfigValues.showAdminProductClpAssignment ?? false) === true"
+    >
+        <sw-inherit-wrapper v-if="!isLoading"
+            v-model:value="product.extensions.areanetClp"
+            :inherited-value="parentProduct.extensions ? parentProduct.extensions.areanetClp : null"
+            :has-parent="!!parentProduct.id"
+            :label="$t('sw-product.detail.areanetClpSelectLabel')"
+            :isAssociation="true">
+
+            <template #content="props">
+                <my-custom-many-to-many-select
+                    :local-mode="product.isNew()"
+                    v-model:entity-collection="props.currentValue"
+                    @update:entityCollection="(entityCollection) => handleUpdate(entityCollection, props)"
+                    label-property="name"
+                    :placeholder="$t('sw-product.detail.areanetClpSelectPlaceholder')"
+                    :value-limit="10"
+                    :criteria="AreanetClpProductAssignmentCriteria"
+                >
+                    <template #selection-label-property="{ item }">
+                        <img
+                            v-if="item.ghs && item.ghs.image != null && item.ghs.image != ''"
+                            :src="'../bundles/areanetclp/storefront/img/clp/' + item.ghs.image"
+                            height="14"
+                            style="height: 14px; float: left; padding-right: 5px;"
+                        />
+                        {{ item.name }}
+                    </template>
+
+                    <template #result-label-property="{ item }">
+                        <img
+                            v-if="item.ghs && item.ghs.image != null && item.ghs.image != ''"
+                            :src="'../bundles/areanetclp/storefront/img/clp/' + item.ghs.image"
+                            width="40"
+                        />
+                        {{ item.name }} - {{ item.text }}
+                    </template>
+                </my-custom-many-to-many-select>
+            </template>
+        </sw-inherit-wrapper>
+
+        <sw-text-field
+            v-if="product"
+            v-for="(field,key) in textFields"
+            v-model:value="product.customFields.areanet_clp[key]"
+            :key ="key"
+        >
+            <template v-slot:label>
+                <span class="clp-label">
+                    <img
+                        v-if="field.item.ghs && field.item.ghs.image != null && field.item.ghs.image != ''"
+                        :src="'../bundles/areanetclp/storefront/img/clp/' + field.item.ghs.image"
+                        width="40"
+                    />
+                    <span v-else>&nbsp;</span>
+                    <b>{{ field.label }}:</b>
+                    <span>{{ field.text }}</span>
+                </span>
+            </template>
+        </sw-text-field>
+    </sw-card>
+{% endblock %}

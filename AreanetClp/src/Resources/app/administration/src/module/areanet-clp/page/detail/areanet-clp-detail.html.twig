@@ -1,0 +1,59 @@
+{% block areanet_clp_detail %}
+    <sw-page class="areanet-clp-detail">
+        <template #smart-bar-actions>
+            <sw-language-switch
+                    @on-change="onChangeLanguage"
+                    :saveChangesFunction="saveOnLanguageChange"
+                    :disabled="!entityId">
+            </sw-language-switch>
+
+            <sw-button :routerLink="{ name: 'areanet.clp.list' }">
+                {{ $tc('areanet-clp.detail.cancelButtonText') }}
+            </sw-button>
+
+            <sw-button-process
+                    :isLoading="isLoading"
+                    :processSuccess="processSuccess"
+                    variant="primary"
+                    @process-finish="saveFinish"
+                    @click="onClickSave">
+                    {{ $tc('areanet-clp.detail.saveButtonText') }}
+            </sw-button-process>
+        </template>
+        <template #content>
+            <sw-card-view>
+                <sw-card v-if="entity" :isLoading="isLoading" position-identifier="areanet-clp-form">
+                    <sw-alert variant="warning" appearance="default" :title="$t('areanet-clp.detail.notChangeableAlertTitle')" :showIcon="true" :closable="false" v-if="isDisabled">
+                        {{ $t('areanet-clp.detail.notChangeableAlertText') }}
+                    </sw-alert>
+
+                    <sw-container>
+                        <sw-select-field :label="$t('areanet-clp.detail.typeLabel')" v-model:value="entity.type" :options="typeOptions" :placeholder="$t('areanet-clp.detail.placeholder')" :disabled="isDisabled" required></sw-select-field>
+                        <sw-text-field :label="$t('areanet-clp.detail.nameLabel')" v-model:value="entity.name" :disabled="isDisabled"></sw-text-field>
+                        <sw-text-field :label="$t('areanet-clp.detail.textLabel')" v-model:value="entity.text" :disabled="isDisabled"></sw-text-field>
+                        <sw-container columns="auto 100px" gap="0px 30px">
+                            <sw-entity-single-select
+                                    v-model:value="entity.ghsId"
+                                    entity="areanet_clp_ghs"
+                                    :label="$t('areanet-clp.detail.symbolNameLabel')"
+                                    :placeholder="$t('areanet-clp.detail.placeholder')"
+                                    :disabled="isDisabled"
+                                    :criteria="ghsAssignmentCriteria"
+                                    @change="onSelectGhs"
+                            ></sw-entity-single-select>
+                            <img v-if="entity.image" :src="'../bundles/areanetclp/storefront/img/clp/' + entity.image" :alt=" entity.ghsalt" width="80" />
+                        </sw-container>
+                        <sw-select-field :label="$t('areanet-clp.detail.signalNameLabel')" v-model:value="entity.signalName" :options="signalOptions" :placeholder="$t('areanet-clp.detail.placeholder')" :disabled="isDisabled"></sw-select-field>
+                    </sw-container>
+
+                    <sw-entity-many-to-many-select
+                            :localMode="entity.isNew()"
+                            :label="$t('areanet-clp.detail.assignProductsLabel')"
+                            :entityCollection="entity.products"
+                            v-model:value="entity.products">
+                    </sw-entity-many-to-many-select>
+                </sw-card>
+            </sw-card-view>
+        </template>
+    </sw-page>
+{% endblock %}

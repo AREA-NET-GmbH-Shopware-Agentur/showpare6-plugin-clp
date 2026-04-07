@@ -1,0 +1,201 @@
+{% if id is not defined %}
+    {% set id = "clp" %}
+{% endif %}
+
+{% if showSentenceName is not defined %}
+    {% set showSentenceName = true %}
+{% endif %}
+
+{% if showPictogramName is not defined %}
+    {% set showPictogramName = false %}
+{% endif %}
+
+{% if showSentenceHeadline is not defined %}
+    {% set showSentenceHeadline = true %}
+{% endif %}
+
+{% set areanet_clp_h = [] %}
+{% set areanet_clp_euh = [] %}
+{% set areanet_clp_p = [] %}
+{% set areanet_clp = [] %}
+{% set ghs_name = "" %}
+{% set signal_name = "" %}
+
+{% for item in clp %}
+    {% if item.type == 'areanet_clp_h' %}
+        {% set areanet_clp_h = areanet_clp_h|merge([{'name': item.name, 'text': item.text, 'ghs': item.ghs, 'signal_name': item.signalName, translated: {'name': item.translated.name, 'text': item.translated.text}}]) %}
+    {% elseif item.type == 'areanet_clp_euh' %}
+        {% set areanet_clp_euh = areanet_clp_euh|merge([{'name': item.name, 'text': item.text, 'ghs': item.ghs, 'signal_name': item.signalName, translated: {'name': item.translated.name, 'text': item.translated.text}}]) %}
+    {% elseif item.type == 'areanet_clp_p' %}
+        {% set areanet_clp_p = areanet_clp_p|merge([{'name': item.name, 'text': item.text, 'ghs': item.ghs, 'signal_name': item.signalName, translated: {'name': item.translated.name, 'text': item.translated.text}}]) %}
+    {% endif %}
+{% endfor %}
+
+{% set areanet_clp= areanet_clp|merge(areanet_clp_h) %}
+{% set areanet_clp= areanet_clp|merge(areanet_clp_euh) %}
+{% set areanet_clp= areanet_clp|merge(areanet_clp_p) %}
+
+{% if areanet_clp|length > 0 %}
+
+    {% block frontend_plugins_areanet_clp_full_overview %}
+
+        <div {% if id != false %} id="{{ id }}" {% endif %} class="areanet-clp areanet-clp--full {{ additionalClasses }}">
+            {% block frontend_plugins_areanet_clp_full_inner %}
+
+                {% block frontend_plugins_areanet_clp_full_title %}
+                    <div class="areanet-clp--title">{{ 'areanet-clp.detail.clp_reach_headline'|trans }}</div>
+                {% endblock %}
+
+                {% block frontend_plugins_areanet_clp_full_table %}
+                    <div class="clp-table">
+
+                        {% block frontend_plugins_areanet_clp_full_table_inner %}
+
+                            {% block frontend_plugins_areanet_clp_full_table_symbols %}
+                                {% if areanet_clp|length > 0 %}
+                                    <div class="clp-group">
+                                        {% if showSentenceHeadline == true %}
+                                            <div class="clp-group-headline clp-group-headline-symbol">
+                                              {% set hasSignalWord = false %}
+                                              {% for element in areanet_clp|sort((a, b) => a.signal_name <=> b.signal_name) %}
+                                                {% if signal_name != element.signal_name and element.signal_name != "" %}
+                                                  {% set hasSignalWord = true %}
+                                                  <div class="font-weight-bold">{{ ('areanet-clp.detail.signal_' ~ element.signal_name)|trans }}</div>
+                                                {% endif %}
+                                                {% set signal_name = element.signal_name %}
+                                              {% endfor %}
+                                              {% if not hasSignalWord %}
+                                                {{ 'areanet-clp.detail.symbol'|trans }}
+                                              {% endif %}
+                                            </div>
+                                        {% endif %}
+                                        <div class="clp-group-values">
+                                            {% for element in areanet_clp|sort((a, b) => a.ghs.name <=> b.ghs.name) %}
+                                                {% if ghs_name != element.ghs.name %}
+                                                    {% if showPictogramName %}
+                                                        <div class="clp-image-container">
+                                                            <img src="{{ asset('bundles/areanetclp/storefront/img/clp/' ~ element.ghs.image) }}"
+                                                                 alt="{{ element.ghs.translated.text }}" title="{{ element.ghs.translated.text }}" />
+
+                                                            {{ element.ghs.name }} - {{ element.ghs.translated.text }}
+                                                        </div>
+                                                    {% else %}
+                                                        <img src="{{ asset('bundles/areanetclp/storefront/img/clp/' ~ element.ghs.image) }}"
+                                                             alt="{{ element.ghs.translated.text }}" title="{{ element.ghs.translated.text }}" />
+                                                    {% endif %}
+                                                {% endif %}
+                                                {% set ghs_name = element.ghs.name %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endblock %}
+
+                            {% block frontend_plugins_areanet_clp_full_table_signal %}
+                                {% if areanet_clp|length > 0 and not showSentenceHeadline %}
+                                    <div class="clp-group{% if showSentenceHeadline == true %} clp-group-show-headline {% else %} clp-group-hide-headline {% endif %}">
+                                        {% if showSentenceHeadline == true %}
+                                            <div class="clp-group-headline clp-group-headline-signal">{{ 'areanet-clp.detail.signal'|trans }}</div>
+                                        {% endif %}
+                                        <div class="clp-group-values">
+                                            {% for element in areanet_clp|sort((a, b) => a.signal_name <=> b.signal_name) %}
+                                                {% if signal_name != element.signal_name and element.signal_name != "" %}
+                                                    <div class="font-weight-bold">{{ ('areanet-clp.detail.signal_' ~ element.signal_name)|trans }}</div>
+                                                {% endif %}
+                                                {% set signal_name = element.signal_name %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endblock %}
+
+                            {% block frontend_plugins_areanet_clp_full_table_h %}
+                                {% if areanet_clp_h|length > 0 %}
+                                    <div class="clp-group{% if showSentenceHeadline == true %} clp-group-show-headline {% else %} clp-group-hide-headline {% endif %}">
+                                        {% if showSentenceHeadline == true %}
+                                            <div class="clp-group-headline">{{ 'areanet-clp.detail.hazard_statements'|trans|raw }}</div>
+                                        {% endif %}
+
+                                        <div class="clp-group-values">
+                                            {% for element in areanet_clp_h|sort((a, b) => a.translated.name <=> b.translated.name) %}
+                                                {% set var1 = '' %}
+                                                {% set var2 = '' %}
+
+                                                {% if product.translated.customFields['areanet_clp'][element.translated.name ~ '_var1'] is defined %}
+                                                    {% set var1 = '<i>' ~ product.translated.customFields['areanet_clp'][element.translated.name ~ '_var1'] ~ '</i>' %}
+                                                {% endif %}
+
+                                                {% if product.translated.customFields['areanet_clp'][element.translated.name ~ '_var2'] is defined %}
+                                                    {% set var2 = '<i>' ~ product.translated.customFields['areanet_clp'][element.translated.name ~ '_var2'] ~ '</i>' %}
+                                                {% endif %}
+
+                                                <div class="{% if showSentenceInline == true %} d-inline{% endif %}">{% if showSentenceName == true %}{{ element.translated.name }}: {% endif %}{{ element.translated.text|striptags|replace({'%var1%': var1, '%var2%': var2, '<…>': '', '<...>': '', '<…°C/…°F>': '', '<... °C/...°F>': '', '<… kg/…lbs>': ''})|sw_sanitize }}{% if (element.translated.text ends with '.') == false %}.{% endif %}</div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endblock %}
+
+                            {% block frontend_plugins_areanet_clp_full_table_euh %}
+                                {% if areanet_clp_euh|length > 0 %}
+                                    <div class="clp-group{% if showSentenceHeadline == true %} clp-group-show-headline {% else %} clp-group-hide-headline {% endif %}">
+                                        {% if showSentenceHeadline == true %}
+                                            <div class="clp-group-headline">{{ 'areanet-clp.detail.eu_hazard_satetements'|trans }}</div>
+                                        {% endif %}
+                                        <div class="clp-group-values">
+                                            {% for element in areanet_clp_euh|sort((a, b) => a.translated.name <=> b.translated.name) %}
+                                                {% set var1 = '' %}
+                                                {% set var2 = '' %}
+
+                                                {% if product.translated.customFields['areanet_clp'][element.translated.name ~ '_var1'] is defined %}
+                                                    {% set var1 = '<i>' ~ product.translated.customFields['areanet_clp'][element.translated.name ~ '_var1'] ~ '</i>' %}
+                                                {% endif %}
+
+                                                {% if product.translated.customFields['areanet_clp'][element.translated.name ~ '_var2'] is defined %}
+                                                    {% set var2 = '<i>' ~ product.translated.customFields['areanet_clp'][element.translated.name ~ '_var2'] ~ '</i>' %}
+                                                {% endif %}
+
+                                                <div class="{% if showSentenceInline == true %} d-inline{% endif %}">{% if showSentenceName == true %}{{ element.translated.name }}: {% endif %}{{ element.translated.text|striptags|replace({'%var1%': var1, '%var2%': var2, '<…>': '', '<...>': '', '<…°C/…°F>': '', '<... °C/...°F>': '', '<… kg/…lbs>': ''})|sw_sanitize }}{% if (element.translated.text ends with '.') == false %}.{% endif %}</div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endblock %}
+
+                            {% block frontend_plugins_areanet_clp_full_table_p %}
+                                {% if areanet_clp_p|length > 0 %}
+                                    <div class="clp-group{% if showSentenceHeadline == true %} clp-group-show-headline {% else %} clp-group-hide-headline {% endif %}">
+                                        {% if showSentenceHeadline == true %}
+                                            <div class="clp-group-headline">{{ 'areanet-clp.detail.precautionary_statements'|trans }}</div>
+                                        {% endif %}
+                                        <div class="clp-group-values">
+                                            {% for element in areanet_clp_p|sort((a, b) => a.translated.name <=> b.translated.name) %}
+                                                {% set var1 = '' %}
+                                                {% set var2 = '' %}
+
+                                                {% if product.translated.customFields['areanet_clp'][element.translated.name ~ '_var1'] is defined %}
+                                                    {% set var1 = '<i>' ~ product.translated.customFields['areanet_clp'][element.translated.name ~ '_var1'] ~ '</i>' %}
+                                                {% endif %}
+
+                                                {% if product.translated.customFields['areanet_clp'][element.translated.name ~ '_var2'] is defined %}
+                                                    {% set var2 = '<i>' ~ product.translated.customFields['areanet_clp'][element.translated.name ~ '_var2'] ~ '</i>' %}
+                                                {% endif %}
+
+                                                <div class="{% if showSentenceInline == true %} d-inline{% endif %}">{% if showSentenceName == true %}{{ element.translated.name }}: {% endif %}{{ element.translated.text|striptags|replace({'%var1%': var1, '%var2%': var2, '<…>': '', '<...>': '', '<…°C/…°F>': '', '<... °C/...°F>': '', '<… kg/…lbs>': ''})|sw_sanitize }}{% if (element.translated.text ends with '.') == false %}.{% endif %}</div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endblock %}
+
+                        {% endblock %}
+
+                    </div>
+                {% endblock %}
+
+            {% endblock %}
+
+        </div>
+    {% endblock %}
+
+{% endif %}

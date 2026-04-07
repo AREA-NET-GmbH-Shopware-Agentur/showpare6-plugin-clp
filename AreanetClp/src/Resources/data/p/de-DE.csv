@@ -1,0 +1,144 @@
+P101;Ist ärztlicher Rat erforderlich, Verpackung oder Kennzeichnungsetikett bereithalten.
+P102;Darf nicht in die Hände von Kindern gelangen.
+P103;Lesen Sie sämtliche Anweisungen aufmerksam und befolgen Sie diese.
+P201;Vor Gebrauch besondere Anweisungen einholen.
+P202;Vor Gebrauch alle Sicherheitshinweise lesen und verstehen.
+P210;Von Hitze, heißen Oberflächen, Funken, offenen Flammen und anderen Zündquellen fernhalten. Nicht rauchen.
+P211;Nicht gegen offene Flamme oder andere Zündquelle sprühen.
+P212;Erhitzen unter Einschluss und Reduzierung des Desensibilisierungsmittels vermeiden.
+P220;Von Kleidung und anderen brennbaren Materialien fernhalten.
+P221;Mischen mit brennbaren Stoffen/%var1%<...> unbedingt verhindern.
+P222;Keinen Kontakt mit Luft zulassen.
+P223;Keinen Kontakt mit Wasser zulassen.
+P230;Feucht halten mit %var1%<...>
+P231;Inhalt unter inertem Gas/%var1%<...> handhaben und aufbewahren.
+P231 + P232;Inhalt unter inertem Gas/%var1%<...> handhaben und aufbewahren. Vor Feuchtigkeit schützen.
+P232;Vor Feuchtigkeit schützen.
+P233;Behälter dicht verschlossen halten.
+P234;Nur in Originalverpackung aufbewahren.
+P235;Kühl halten.
+P235 + P410;Kühl halten. Vor Sonnenbestrahlung schützen.
+P240;Behälter und zu befüllende Anlage erden.
+P241;Explosionsgeschützte elektrische Geräte/Lüftungsanlagen/Beleuchtungsanlagen/%var1%<...> verwenden.
+P242;Funkenarmes Werkzeug verwenden.
+P243;Maßnahmen gegen elektrostatische Entladungen treffen.
+P244;Ventile und Ausrüstungsteile öl- und fettfrei halten.
+P250;Nicht schleifen/stoßen/reiben/%var1%<...> .
+P251;Nicht durchstechen oder verbrennen, auch nicht nach Gebrauch.
+P260;Staub/Rauch/Gas/Nebel/Dampf/Aerosol nicht einatmen.
+P261;Einatmen von Staub/Rauch/Gas/Nebel/Dampf/Aerosol vermeiden.
+P262;Nicht in die Augen, auf die Haut oder auf die Kleidung gelangen lassen.
+P263;Berührung während Schwangerschaft und Stillzeit vermeiden.
+P264;Nach Gebrauch %var1%<...> gründlich waschen.
+P270;Bei Gebrauch nicht essen, trinken oder rauchen.
+P271;Nur im Freien oder in gut belüfteten Räumen verwenden.
+P272;Kontaminierte Arbeitskleidung nicht außerhalb des Arbeitsplatzes tragen.
+P273;Freisetzung in die Umwelt vermeiden.
+P280;Schutzhandschuhe/ Schutzkleidung/ Augenschutz/ Gesichtsschutz/ Gehörschutz/ %var1%<...> tragen
+P281;Vorgeschriebene persönliche Schutzausrüstung verwenden.
+P282;Schutzhandschuhe mit Kälteisolierung/Gesichtsschild/Augenschutz tragen.
+P283;Schwer entflammbare oder flammhemmende Kleidung tragen.
+P284;[Bei unzureichender Belüftung] Atemschutz tragen.
+P285;Bei unzureichender Belüfung Atemschutz tragen.
+P301;BEI VERSCHLUCKEN:
+P301 + P310;BEI VERSCHLUCKEN: Sofort GIFTINFORMATIONSZENTRUM/Arzt/%var1%<...>/anrufen.
+P301 + P312;BEI VERSCHLUCKEN: Bei Unwohlsein GIFTINFORMATIONSZENTRUM/Arzt/%var1%<...> anrufen.
+P301 + P330 + P331;BEI VERSCHLUCKEN: Mund ausspülen. KEIN Erbrechen herbeiführen.
+P302;BEI BERÜHRUNG MIT DER HAUT:
+P302 + P334;BEI BERÜHRUNG MIT DER HAUT: In kaltes Wasser tauchen oder nassen Verband anlegen.
+P302 + P350;BEI KONTAKT MIT DER HAUT: Behutsam mit viel Wasser und Seife waschen.
+P302 + P352;BEI BERÜHRUNG MIT DER HAUT: Mit viel Wasser/%var1%<...>/waschen.
+P303;BEI BERÜHRUNG MIT DER HAUT (oder dem Haar):
+P303 + P361 + P353;BEI BERÜHRUNG MIT DER HAUT (oder dem Haar): Alle kontaminierten Kleidungsstücke sofort ausziehen. Haut mit Wasser abwaschen [oder duschen].
+P304;BEI EINATMEN:
+P304 + P312;BEI EINATMEN: Bei Unwohlsein GIFTINFORMATIONSZENTRUM oder Arzt anrufen.
+P304 + P340;BEI EINATMEN: Die Person an die frische Luft bringen und für ungehinderte Atmung sorgen.
+P304 + P341;BEI EINATMEN: Bei Atembeschwerden an die frische Luft bringen und in einer Position ruhigstellen, die das Atmen erleichtert.
+P305;BEI KONTAKT MIT DEN AUGEN:
+P305 + P351 + P338;BEI KONTAKT MIT DEN AUGEN: Einige Minuten lang behutsam mit Wasser spülen. Eventuell vorhandene Kontaktlinsen nach Möglichkeit entfernen. Weiter spülen.
+P306;BEI KONTAKT MIT DER KLEIDUNG:
+P306 + P360;BEI KONTAKT MIT DER KLEIDUNG: Kontaminierte Kleidung und Haut sofort mit viel Wasser abwaschen und danach Kleidung ausziehen.
+P307;BEI Exposition:
+P307 + P311;BEI Exposition: GIFTINFORMATIONSZENTRUM oder Arzt anrufen.
+P308;BEI Exposition oder falls betroffen
+P308 + P311;BEI Exposition oder falls betroffen: GIFTINFORMATIONSZENTRUM/Arzt/%var1%<...>/anrufen.
+P308 + P313;BEI Exposition oder falls betroffen: Ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen.
+P309;BEI Exposition oder Unwohlsein:
+P309 + P311;BEI Exposition oder Unwohlsein: GIFTINFORMATIONSZENTRUM oder Arzt anrufen.
+P310;Sofort GIFTINFORMATIONSZENTRUM/Arzt/%var1%<...>/anrufen.
+P311;GIFTINFORMATIONSZENTRUM/Arzt/%var1%<...>/anrufen.
+P312;Bei Unwohlsein GIFTINFORMATIONSZENTRUM/Arzt/%var1%<...> anrufen.
+P313;Ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen.
+P314;Bei Unwohlsein ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen.
+P315;Sofort ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen.
+P320;Besondere Behandlung dringend erforderlich (siehe %var1%<...> auf diesem Kennzeichnungsetikett).
+P321;Besondere Behandlung (siehe %var1%<...> auf diesem Kennzeichnungsetikett).
+P322;Gezielte Maßnahmen (siehe %var1%<...> auf diesem Kennzeichnungsetikett).
+P330;Mund ausspülen.
+P331;KEIN Erbrechen herbeiführen.
+P332;Bei Hautreizung:
+P332 + P313;Bei Hautreizung: Ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen.
+P333;Bei Hautreizung oder -ausschlag:
+P333 + P313;Bei Hautreizung oder -ausschlag: Ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen.
+P334;In kaltes Wasser tauchen [oder nassen Verband anlegen].
+P335;Lose Partikel von der Haut abbürsten.
+P335 + P334;Lose Partikel von der Haut abbürsten. In kaltes Wasser tauchen/nassen Verband anlegen.
+P336;Vereiste Bereiche mit lauwarmem Wasser auftauen. Betroffenen Bereich nicht reiben.
+P337;Bei anhaltender Augenreizung:
+P337 + P313;Bei anhaltender Augenreizung: Ärztlichen Rat einholen/ärztliche Hilfe hinzuziehen.
+P338;Eventuell Vorhandene Kontaktlinsen nach Möglichkeit entfernen. Weiter ausspülen.
+P340;Die Person an die frische Luft bringen und für ungehinderte Atmung sorgen.
+P341;Bei Atembeschwerden an die frische Luft bringen und in einer Position ruhigstellen, die das Atmen erleichtert.
+P342;Bei Symptomen der Atemwege:
+P342 + P311;Bei Symptomen der Atemwege: GIFTINFORMATIONSZENTRUM/Arzt/%var1%<...>/anrufen.
+P350;Behutsam mit viel Wasser und Seife waschen.
+P351;Einige Minuten lang behutsam mit Wasser ausspülen.
+P352;Mit viel Wasser/%var1%<...>/waschen.
+P353;Haut mit Wasser abwaschen [oder duschen].
+P360;Kontaminierte Kleidung und Haut sofort mit viel Wasser abwaschen und danach Kleidung ausziehen.
+P361;Alle kontaminierten Kleidungsstücke sofort ausziehen.
+P361 + P364;Alle kontaminierten Kleidungsstücke sofort ausziehen und vor erneutem Tragen waschen.
+P362;Kontaminierte Kleidung ausziehen.
+P362 + P364;Kontaminierte Kleidung ausziehen und vor erneutem Tragen waschen.
+P363;Kontaminierte Kleidung vor erneutem Tragen waschen.
+P364;Und vor erneutem Tragen waschen.
+P370;Bei Brand:
+P370 + P376;Bei Brand: Undichtigkeit beseitigen, wenn gefahrlos möglich.
+P370 + P378;Bei Brand: %var1%<...> zum Löschen verwenden.
+P370 + P380;Bei Brand: Umgebung räumen.
+P370 + P380 + P375;Bei Brand: Umgebung räumen. Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen.
+P371;Bei Großbrand und großen Mengen:
+P371 + P380 + P375;Bei Großbrand und großen Mengen: Umgebung räumen. Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen.
+P372;Explosionsgefahr.
+P373;KEINE Brandbekämpfung, wenn das Feuer explosive Stoffe/Gemische/Erzeugnisse erreicht.
+P374;Brandbekämpfung mit üblichen Vorsichtsmaßnahmen aus angemessener Entfernung.
+P375;Wegen Explosionsgefahr Brand aus der Entfernung bekämpfen.
+P376;Undichtigkeit beseitigen, wenn gefahrlos möglich.
+P377;Brand von ausströmendem Gas: Nicht löschen, bis Undichtigkeit gefahrlos beseitigt werden kann.
+P378;%var1%<...> zum Löschen verwenden.
+P380;Umgebung räumen.
+P381;Bei Undichtigkeit alle Zündquellen entfernen.
+P390;Verschüttete Mengen aufnehmen, um Materialschäden zu vermeiden.
+P391;Verschüttete Mengen aufnehmen.
+P401;Aufbewahren gemäß %var1%<...> .
+P402;An einem trockenen Ort aufbewahren.
+P402 + P404;An einem trockenen Ort aufbewahren. In einem geschlossenen Behälter aufbewahren.
+P403;An einem gut belüfteten Ort aufbewahren.
+P403 + P233;An einem gut belüfteten Ort aufbewahren. Behälter dicht verschlossen halten.
+P403 + P235;An einem gut belüfteten Ort aufbewahren. Kühl halten.
+P404;In einem geschlossenen Behälter aufbewahren.
+P405;Unter Verschluss aufbewahren.
+P406;In korrosionsbeständigem/%var1%<...> Behälter mit widerstandsfähiger Innenauskleidung aufbewahren.
+P407;Luftspalt zwischen Stapeln oder Paletten lassen.
+P410;Vor Sonnenbestrahlung schützen.
+P410 + P403;Vor Sonnenbestrahlung schützen. An einem gut belüfteten Ort aufbewahren.
+P410 + P412;Vor Sonnenbestrahlung schützen und nicht Temperaturen über 50 °C/122 °F aussetzen.
+P411;Bei Temperaturen nicht über %var1%<... °C/...°F> aufbewahren.
+P411 + P235;Bei Temperaturen nicht über %var1%<... °C/...°F> aufbewahren. Kühl halten.
+P412;Nicht Temperaturen über 50 °C/122 °F aussetzen.
+P413;Schüttgut in Mengen von mehr als %var1%<... kg/... lbs> bei Temperaturen nicht über %var2%<... °C/... °F> aufbewahren.
+P420;Getrennt aufbewahren.
+P422;Inhalt in/unter %var1%<...> aufbewahren
+P501;Inhalt/Behälter %var1%<...> zuführen.
+P502;Informationen zur Wiederverwendung oder Wiederverwertung beim Hersteller oder Lieferanten erfragen.
+P503;Informationen zur Entsorgung/Wiederverwendung/Wiederverwertung beim Hersteller/Lieferanten/%var1%<...> erfragen

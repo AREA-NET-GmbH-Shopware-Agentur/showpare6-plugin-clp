@@ -1,0 +1,105 @@
+H200;Instabil, explosiv.;danger;GHS01
+H201;"Explosiv; Gefahr der Massenexplosion.";danger;GHS01
+H202;"Explosiv; große Gefahr durch Splitter, Spreng- und Wurfstücke.";danger;GHS01
+H203;"Explosiv; Gefahr durch Feuer, Luftdruck oder Splitter, Spreng- und Wurfstücke.";danger;GHS01
+H204;Gefahr durch Feuer oder Splitter, Spreng- und Wurfstücke.;attention;GHS01
+H205;Gefahr der Massenexplosion bei Feuer.;danger
+H206;"Gefahr durch Feuer, Druckstoß oder Sprengstücke; erhöhte Explosionsgefahr wenn das Desensibilisierungsmittel reduziert wird."
+H207;"Gefahr durch Feuer oder Sprengstücke; erhöhte Explosionsgefahr wenn das Desensibilisierungsmittel reduziert wird."
+H208;"Gefahr durch Feuer; erhöhte Explosionsgefahr wenn das Desensibilisierungsmittel reduziert wird."
+H220;Extrem entzündbares Gas.;danger;GHS02
+H221;Entzündbares Gas.;attention
+H222;Extrem entzündbares Aerosol.;danger;GHS02
+H223;Entzündbares Aerosol.;attention;GHS02
+H224;Flüssigkeit und Dampf extrem entzündbar.;danger;GHS02
+H225;Flüssigkeit und Dampf leicht entzündbar.;danger;GHS02
+H226;Flüssigkeit und Dampf entzündbar.;attention;GHS02
+H227;Brennbare Flüssigkeit.
+H228;Entzündbarer Feststoff.;danger;GHS02
+H229;Behälter steht unter Druck: Kann bei Erwärmung bersten.
+H230;Kann auch in Abwesenheit von Luft explosionsartig reagieren.
+H231;Kann auch in Abwesenheit von Luft bei erhöhtem Druck und/oder erhöhter Temperatur explosionsartig reagieren.
+H232;Kann sich bei Kontakt mit Luft spontan entzünden.
+H240;Erwärmung kann Explosion verursachen.;danger;GHS01
+H241;Erwärmung kann Brand oder Explosion verursachen.;danger;GHS01
+H242;Erwärmung kann Brand verursachen.;danger;GHS02
+H250;Entzündet sich in Berührung mit Luft von selbst.;danger;GHS02
+H251;"Selbsterhitzungsfähig; kann in Brand geraten.";danger;GHS02
+H252;"In großen Mengen selbsterhitzungsfähig; kann in Brand geraten.";attention;GHS02
+H260;In Berührung mit Wasser entstehen entzündbare Gase, die sich spontan entzünden können.;danger;GHS02
+H261;In Berührung mit Wasser entstehen entzündbare Gase.;danger;GHS02
+H270;"Kann Brand verursachen oder verstärken; Oxidationsmittel.";danger;GHS03
+H271;"Kann Brand oder Explosion verursachen; starkes Oxidationsmittel.";danger;GHS03
+H272;"Kann Brand verstärken; Oxidationsmittel.";danger;GHS03
+H280;"Enthält Gas unter Druck; kann bei Erwärmung explodieren.";attention;GHS04
+H281;"Enthält tiefgekühltes Gas; kann Kälteverbrennungen oder -verletzungen verursachen.";attention;GHS04
+H290;Kann gegenüber Metallen korrosiv sein.;attention;GHS05
+H300;Lebensgefahr bei Verschlucken.;danger;GHS06
+H300 + H310;Lebensgefahr bei Verschlucken oder Hautkontakt;danger;GHS06
+H300 + H310 + H330;Lebensgefahr bei Verschlucken, Hautkontakt oder Einatmen;danger;GHS06
+H300 + H330;Lebensgefahr bei Verschlucken oder Einatmen;danger;GHS06
+H301;Giftig bei Verschlucken.;danger;GHS06
+H301 + H311;Giftig bei Verschlucken oder Hautkontakt;danger;GHS06
+H301 + H311 + H331;Giftig bei Verschlucken, Hautkontakt oder Einatmen;danger;GHS06
+H301 + H331;Giftig bei Verschlucken oder Einatmen;danger;GHS06
+H302;Gesundheitsschädlich bei Verschlucken.;attention;GHS07
+H302 + H312;Gesundheitsschädlich bei Verschlucken oder Hautkontakt;attention;GHS07
+H302 + H312 + H332;Gesundheitsschädlich bei Verschlucken, Hautkontakt oder Einatmen;attention;GHS07
+H302 + H332;Gesundheitsschädlich bei Verschlucken oder Einatmen;attention;GHS07
+H303;Kann bei Verschlucken gesundheitsschädlich sein.
+H303 + H313;Kann bei Verschlucken oder Hautkontakt gesundheitsschädlich sein.
+H303 + H313 + H333;Kann bei Verschlucken, Hautkontakt oder Einatmen gesundheitsschädlich sein.
+H303 + H333;Kann bei Verschlucken oder Einatmen gesundheitsschädlich sein.
+H304;Kann bei Verschlucken und Eindringen in die Atemwege tödlich sein.;danger;GHS08
+H305;Kann bei Verschlucken und Eindringen in die Atemwege gesundheitsschädlich sein.
+H310;Lebensgefahr bei Hautkontakt.;danger;GHS06
+H310 + H330;Lebensgefahr bei Hautkontakt oder Einatmen;danger;GHS06
+H311;Giftig bei Hautkontakt.;danger;GHS06
+H311 + H331;Giftig bei Hautkontakt oder Einatmen;danger;GHS06
+H312;Gesundheitsschädlich bei Hautkontakt.;attention;GHS07
+H312 + H332;Gesundheitsschädlich bei Hautkontakt oder Einatmen;attention;GHS07
+H313;Kann bei Berührung mit der Haut gesundheitsschädlich sein.
+H313 + H333;Kann bei Hautkontakt oder Einatmen gesundheitsschädlich sein.
+H314;Verursacht schwere Verätzungen der Haut und schwere Augenschäden.;danger;GHS05
+H315;Verursacht Hautreizungen.;attention;GHS07
+H315 + H320;Verursacht Haut- und Augenreizungen.;attention;GHS07
+H316;Verursacht leichte Hautreizungen.
+H317;Kann allergische Hautreaktionen verursachen.;attention;GHS07
+H318;Verursacht schwere Augenschäden.;danger;GHS05
+H319;Verursacht schwere Augenreizung.;attention;GHS07
+H320;Verursacht Augenreizungen.
+H330;Lebensgefahr bei Einatmen.;danger;GHS06
+H331;Giftig bei Einatmen.;danger;GHS06
+H332;Gesundheitsschädlich bei Einatmen.;attention;GHS07
+H333;Kann bei Einatmen gesundheitsschädlich sein.
+H334;Kann bei Einatmen Allergie, asthmaartige Symptome oder Atembeschwerden verursachen.;danger;GHS08
+H335;Kann die Atemwege reizen.;attention;GHS07
+H336;Kann Schläfrigkeit und Benommenheit verursachen.;attention;GHS07
+H340;Kann genetische Defekte verursachen %var1%<Expositionsweg angeben, sofern schlüssig belegt ist, dass diese Gefahr bei keinem anderen Expositionsweg besteht>.;danger;GHS08
+H341;Kann vermutlich genetische Defekte verursachen %var1%<Expositionsweg angeben, sofern schlüssig belegt ist, dass diese Gefahr bei keinem anderen Expositionsweg besteht>.;attention;GHS08
+H350;Kann Krebs erzeugen %var1%<Expositionsweg angeben, sofern schlüssig belegt ist, dass diese Gefahr bei keinem anderen Expositionsweg besteht>.;danger;GHS08
+H350i;Kann bei Einatmen Krebs erzeugen.;danger;GHS08
+H351;Kann vermutlich Krebs erzeugen %var1%<Expositionsweg angeben, sofern schlüssig belegt ist, dass diese Gefahr bei keinem anderen Expositionsweg besteht>.;attention;GHS08
+H360;Kann die Fruchtbarkeit beeinträchtigen oder das Kind im Mutterleib schädigen %var1%<konkrete Wirkung angeben, sofern bekannt> %var2%<Expositionsweg angeben, sofern schlüssig belegt ist, dass die Gefahr bei keinem anderen Expositionsweg besteht>.;danger;GHS08
+H360D;Kann das Kind im Mutterleib schädigen.;danger;GHS08
+H360Df;Kann das Kind im Mutterleib schädigen. Kann vermutlich die Fruchtbarkeit beeinträchtigen.;danger;GHS08
+H360F;Kann die Fruchtbarkeit beeinträchtigen.;danger;GHS08
+H360FD;Kann die Fruchtbarkeit beeinträchtigen. Kann das Kind im Mutterleib schädigen.;danger;GHS08
+H360Fd;Kann die Fruchtbarkeit beeinträchtigen. Kann vermutlich das Kind im Mutterleib schädigen.;danger;GHS08
+H361;Kann vermutlich die Fruchtbarkeit beeinträchtigen oder das Kind im Mutterleib schädigen %var1%<konkrete Wirkung angeben, sofern bekannt>;attention;GHS08
+H361d;Kann vermutlich das Kind im Mutterleib schädigen.;attention;GHS08
+H361f;Kann vermutlich die Fruchtbarkeit beeinträchtigen.;attention;GHS08
+H361fd;Kann vermutlich die Fruchtbarkeit beeinträchtigen. Kann vermutlich das Kind im Mutterleib schädigen.;attention;GHS08
+H362;Kann Säuglinge über die Muttermilch schädigen.
+H370;Schädigt die Organe %var1%<oder alle betroffenen Organe nennen, sofern bekannt> %var2%<Expositionsweg angeben, sofern schlüssig belegt ist, dass diese Gefahr bei keinem anderen Expositionsweg besteht>.;danger;GHS08
+H371;Kann die Organe schädigen %var1%<oder alle betroffenen Organe nennen, sofern bekannt> %var2%<Expositionsweg angeben, sofern schlüssig belegt ist, dass diese Gefahr bei keinem anderen Expositionsweg besteht>.;attention;GHS08
+H372;Schädigt die Organe %var1%<alle betroffenen Organe nennen> bei längerer oder wiederholter Exposition %var2%<Expositionsweg angeben, wenn schlüssig belegt ist, dass diese Gefahr bei keinem anderen Expositionsweg besteht>.;danger;GHS08
+H373;Kann die Organe schädigen %var1%<alle betroffenen Organe nennen, sofern bekannt> bei längerer oder wiederholter Exposition %var2%<Expositionsweg angeben, wenn schlüssig belegt ist, dass diese Gefahr bei keinem anderen Expositionsweg besteht>.;attention;GHS08
+H400;Sehr giftig für Wasserorganismen.;attention;GHS09
+H401;Giftig für Wasserorganismen.
+H402;Schädlich für Wasserorganismen.
+H410;Sehr giftig für Wasserorganismen mit langfristiger Wirkung.;attention;GHS09
+H411;Giftig für Wasserorganismen, mit langfristiger Wirkung.;;GHS09
+H412;Schädlich für Wasserorganismen, mit langfristiger Wirkung.
+H413;Kann für Wasserorganismen schädlich sein, mit langfristiger Wirkung.
+H420;Schädigt die öffentliche Gesundheit und die Umwelt durch Ozonabbau in der äußeren Atmosphäre

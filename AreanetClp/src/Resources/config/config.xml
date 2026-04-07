@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+
+
+
+    <card>
+        <title>Global appearance</title>
+        <title lang="de-DE">Globale Anzeigeeinstellungen</title>
+
+        <input-field type="checkbox">
+            <name>showPictogramName</name>
+            <label>Show pictogram name for view mode "Full" (e.g. GHS01 - Exploding bomb: Explosive)</label>
+            <label lang="de-DE">Name des Piktograms bei Anzeige "Komplett" anzeigen (z.B. GHS01 - Explodierende Bombe: Explosiv)</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+
+        <input-field type="checkbox">
+            <name>showSentenceName</name>
+            <label>Show sentence name (e.g. H201)</label>
+            <label lang="de-DE">Name des Satzes anzeigen (z.B. H201)</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+
+        <input-field type="checkbox">
+            <name>showSentenceHeadline</name>
+            <label>Show sentence headline (e.g. Hazard Statements)</label>
+            <label lang="de-DE">Überschriften anzeigen (z.B. Gefahrstoff&#8203;richtlinien)</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+
+    </card>
+
+    <card>
+        <title>Product detail page</title>
+        <title lang="de-DE">Produkt-Detail-Seite</title>
+        <input-field type="single-select">
+            <name>topDisplayMode</name>
+            <label>Appearance under buybox</label>
+            <label lang="de-DE">Anzeige unter Buybox</label>
+            <value>short</value>
+            <options>
+                <option>
+                    <id>hidden</id>
+                    <name>Hidden</name>
+                    <name lang="de-DE">Ausgeblendet</name>
+                </option>
+                <option>
+                    <id>short</id>
+                    <name>Short overview</name>
+                    <name lang="de-DE">Kurzübersicht</name>
+                </option>
+                <option>
+                    <id>full</id>
+                    <name>Full</name>
+                    <name lang="de-DE">Komplett</name>
+                </option>
+            </options>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>bottomDisplayMode</name>
+            <label>Appearance under product data</label>
+            <label lang="de-DE">Anzeige unter Produktbeschreibung</label>
+            <value>full</value>
+            <options>
+                <option>
+                    <id>hidden</id>
+                    <name>Hidden</name>
+                    <name lang="de-DE">Ausgeblendet</name>
+                </option>
+                <option>
+                    <id>short</id>
+                    <name>Short overview</name>
+                    <name lang="de-DE">Kurzübersicht</name>
+                </option>
+                <option>
+                    <id>full</id>
+                    <name>Full</name>
+                    <name lang="de-DE">Komplett</name>
+                </option>
+            </options>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Administration</title>
+        <title lang="de-DE">Admin-Bereich</title>
+
+        <input-field type="checkbox">
+            <name>showAdminProductClpAssignment</name>
+            <label>Show CLP-assignment on product page in administration.</label>
+            <label lang="de-DE">CLP-Zuweisung auf Produktseite im Adminbereich anzeigen</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+    </card>
+</config>

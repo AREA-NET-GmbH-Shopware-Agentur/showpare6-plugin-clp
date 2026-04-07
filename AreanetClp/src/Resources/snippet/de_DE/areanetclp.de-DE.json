@@ -1,0 +1,24 @@
+{
+  "areanet-clp": {
+    "detail": {
+      "clp_reach_headline": "CLP-/REACH-Hinweise",
+      "hazard_statements": "Gefahrenhinweise",
+      "precautionary_statements": "Sicherheitshinweise",
+      "symbol": "Symbole",
+      "signal": "Signalwort",
+      "eu_hazard_satetements": "EU Gefahrenhinweise (EUH)",
+      "custom": "Custom",
+      "others": "Andere",
+      "clp-short": {
+        "clp_reach_headline": "CLP-/REACH-Hinweise",
+        "clp_reach_subheadline": "Bitte beachten Sie die Gefahrenhinweise zu diesem Artikel.",
+        "clp_reach_subheadline_more_linktext": "Mehr dazu."
+      },
+      "signal_danger": "Gefahr!",
+      "signal_attention": "Achtung!"
+    },
+    "listing": {
+      "badgeClpNotice": "CLP-Hinweise beachten!"
+    }
+  }
+}

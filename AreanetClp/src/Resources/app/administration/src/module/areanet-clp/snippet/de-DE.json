@@ -1,0 +1,61 @@
+{
+    "global": {
+        "entities": {
+            "areanet_clp": "CLP-Kennzeichen"
+        }
+    },
+
+    "areanet-clp": {
+        "general": {
+            "title": "CLP-Verordnung",
+            "placeholderSearchBar": "Durchsuche CLP-Kennzeichen ..."
+        },
+        "list": {
+            "addEntryText": "Neues Kennzeichen hinzufügen",
+            "columnName": "Name",
+            "columnType": "Typ",
+            "columnText": "Text",
+            "columnSignalName": "Signalwort",
+            "columnDate": "Datum",
+            "columnImage": "GHS-Piktogramm",
+            "type_areanet_clp_euh": "EUH-Sätze",
+            "type_areanet_clp_h": "H-Sätze",
+            "type_areanet_clp_p": "P-Sätze",
+            "signal_danger": "Gefahr",
+            "signal_attention": "Achtung",
+            "signal_": "---",
+            "symbol_": "---"
+        },
+        "detail": {
+            "typeOptionEuhName": "EUH-Sätze",
+            "typeOptionHName": "H-Sätze",
+            "typeOptionPName": "P-Sätze",
+            "typeLabel": "Typ",
+            "nameLabel": "Name",
+            "textLabel": "Text",
+            "signalNameLabel": "Signalwort",
+            "symbolNameLabel": "GHS-Piktogramm",
+            "signal_danger": "Gefahr",
+            "signal_attention": "Achtung",
+            "cancelButtonText": "Abbrechen",
+            "saveButtonText": "Speichern",
+            "notChangeableAlertTitle": "Hinweis!",
+            "notChangeableAlertText": "Dieser CLP-Eintrag kann nicht geändert werden, da er direkt vom Plugin mitgeliefert und aktualisiert wird. Für Änderungen bitte einen neuen Eintrag selbst anlegen.",
+            "placeholder": "Bitte auswählen ...",
+            "assignProductsLabel": "Produkte"
+        },
+        "notification": {
+            "successTitle": "Erfolgreich",
+            "success": "Der Eintrag wurde gespeichert",
+            "errorTitle": "Fehler beim Speichern der Kennzeichnung"
+        }
+    },
+
+    "sw-product": {
+        "detail": {
+            "areanetClpCardLabel": "CLP-Verordnung",
+            "areanetClpSelectLabel": "Zugewiesene CLP-Kennzeichnung",
+            "areanetClpSelectPlaceholder": "CLP-Kennzeichnung hinzufügen..."
+        }
+    }
+}

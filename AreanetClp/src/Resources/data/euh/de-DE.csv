@@ -1,0 +1,28 @@
+EUH001;In trockenem Zustand explosiv.
+EUH006;Mit und ohne Luft explosionsfähig.
+EUH014;Reagiert heftig mit Wasser.
+EUH018;Kann bei Verwendung explosionsfähige/entzündbare Dampf/Luft-Gemische bilden.
+EUH019;Kann explosionsfähige Peroxide bilden.
+EUH029;Entwickelt bei Berührung mit Wasser giftige Gase.
+EUH031;Entwickelt bei Berührung mit Säure giftige Gase.
+EUH032;Entwickelt bei Berührung mit Säure sehr giftige Gase.
+EUH044;Explosionsgefahr bei Erhitzen unter Einschluss.
+EUH059;Die Ozonschicht schädigend.;danger
+EUH066;Wiederholter Kontakt kann zu spröder oder rissiger Haut führen.
+EUH070;Giftig bei Berührung mit den Augen.
+EUH071;Wirkt ätzend auf die Atemwege.
+EUH201;Enthält Blei. Nicht für den Anstrich von Gegenständen verwenden, die von Kindern gekaut oder gelutscht werden könnten.
+EUH201A;Achtung! Enthält Blei.
+EUH202;Cyanacrylat. Gefahr. Klebt innerhalb von Sekunden Haut und Augenlider zusammen. Darf nicht in die Hände von Kindern gelangen.
+EUH203;Enthält Chrom (VI). Kann allergische Reaktionen hervorrufen.
+EUH204;Enthält Isocyanate. Kann allergische Reaktionen hervorrufen.
+EUH205;Enthält epoxidhaltige Verbindungen. Kann allergische Reaktionen hervorrufen.
+EUH206;Achtung! Nicht zusammen mit anderen Produkten verwenden, da gefährliche Gase (Chlor) freigesetzt werden können.
+EUH207;Achtung! Enthält Cadmium. Bei der Verwendung entstehen gefährliche Dämpfe. Hinweise des Herstellers beachten. Sicherheitsanweisungen einhalten.
+EUH208;Enthält %var1%<Name des sensibilisierenden Stoffes>. Kann allergische Reaktionen hervorrufen.
+EUH209;Kann bei Verwendung leicht entzündbar werden.
+EUH209A;Kann bei Verwendung entzündbar werden.
+EUH210;Sicherheitsdatenblatt auf Anfrage erhältlich.
+EUH211;Achtung! Beim Sprühen können gefährliche lungengängige Tröpfchen entstehen. Aerosol oder Nebel nicht einatmen.
+EUH212;Achtung! Bei der Verwendung kann gefährlicher lungengängiger Staub entstehen. Staub nicht einatmen.
+EUH401;Zur Vermeidung von Risiken für Mensch und Umwelt die Gebrauchsanleitung einhalten.

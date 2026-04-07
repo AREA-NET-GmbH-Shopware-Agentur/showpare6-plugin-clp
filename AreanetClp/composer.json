@@ -1,0 +1,31 @@
+{
+    "name": "areanet/plugin-clp",
+    "version": "1.1.0",
+    "description": "CLP plugin",
+    "type": "shopware-platform-plugin",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "AreanetClp\\": "src/"
+        }
+    },
+    "require": {
+        "shopware/core": "6.6.*"
+    },
+    "extra": {
+        "shopware-plugin-class": "AreanetClp\\AreanetClp",
+        "label": {
+            "de-DE": "CLP Plugin",
+            "en-GB": "CLP plugin"
+        },
+        "description": {
+            "de-DE": "",
+            "en-GB": ""
+        },
+        "manufacturerLink": {
+            "de-DE": "www.area-net.de",
+            "en-GB": "www.area-net.de"
+        }
+    }
+}
+

@@ -1,0 +1,57 @@
+{% set areanet_clp_h = [] %}
+{% set areanet_clp_euh = [] %}
+{% set areanet_clp_p = [] %}
+{% set areanet_clp = [] %}
+{% set ghs_name = "" %}
+{% set signal_name = "" %}
+
+{% for item in clp %}
+    {% if item.type == 'areanet_clp_h' %}
+        {% set areanet_clp_h = areanet_clp_h|merge([{'name': item.name, 'text': item.text, 'ghs': item.ghs, 'signal_name': item.signalName, translated: {'name': item.translated.name, 'text': item.translated.text}}]) %}
+    {% elseif item.type == 'areanet_clp_euh' %}
+        {% set areanet_clp_euh = areanet_clp_euh|merge([{'name': item.name, 'text': item.text, 'ghs': item.ghs, 'signal_name': item.signalName, translated: {'name': item.translated.name, 'text': item.translated.text}}]) %}
+    {% elseif item.type == 'areanet_clp_p' %}
+        {% set areanet_clp_p = areanet_clp_p|merge([{'name': item.name, 'text': item.text, 'ghs': item.ghs, 'signal_name': item.signalName, translated: {'name': item.translated.name, 'text': item.translated.text}}]) %}
+    {% endif %}
+{% endfor %}
+
+{% set areanet_clp= areanet_clp|merge(areanet_clp_h) %}
+{% set areanet_clp= areanet_clp|merge(areanet_clp_euh) %}
+{% set areanet_clp= areanet_clp|merge(areanet_clp_p) %}
+
+{% set hasSymbol = false %}
+
+
+{% if areanet_clp|length > 0   %}
+    {% for element in areanet_clp|sort((a, b) => a.ghs.name <=> b.ghs.name) %}
+      {% if ghs_name != element.ghs.name %}
+        {% set hasSymbol = true %}
+        {% set ghs_name = element.ghs.name %}
+      {% endif %}
+    {% endfor %}
+    {% if hasSymbol %}
+      {% block frontend_plugins_areanet_clp_short_overview %}
+          <div class="areanet-clp areanet-clp--short">
+              {% block frontend_plugins_areanet_clp_short_overview_inner %}
+
+                  {% block frontend_plugins_areanet_clp_short_overview_inner_ghs_symbols %}
+                      <div class="clp-ghs-symbols">
+                          {% for element in areanet_clp|sort((a, b) => a.ghs.name <=> b.ghs.name) %}
+                              {% if ghs_name != element.ghs.name and element.ghs.image %}
+                                  <img src="{{ asset('bundles/areanetclp/storefront/img/clp/' ~ element.ghs.image) }}"
+                                       alt="{{ element.ghs.translated.text }}" title="{{ element.ghs.translated.text }}"/>
+                                  {% set ghs_name = element.ghs.name %}
+                              {% endif %}
+                          {% endfor %}
+                      </div>
+                  {% endblock %}
+
+                {% block frontend_plugins_areanet_clp_short_overview_inner_subtext %}
+                  <div class="clp-subtext">{{ 'areanet-clp.detail.clp-short.clp_reach_subheadline'|trans }} <a href="#clp">{{ 'areanet-clp.detail.clp-short.clp_reach_subheadline_more_linktext'|trans }}</a></div>
+                {% endblock %}
+
+              {% endblock %}
+          </div>
+      {% endblock %}
+   {% endif %}
+{% endif %}

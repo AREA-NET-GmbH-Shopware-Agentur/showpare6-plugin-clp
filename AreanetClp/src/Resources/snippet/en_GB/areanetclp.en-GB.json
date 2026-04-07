@@ -1,0 +1,24 @@
+{
+  "areanet-clp": {
+    "detail": {
+      "clp_reach_headline": "CLP-/REACH-Notice",
+      "hazard_statements": "Hazard Statements",
+      "precautionary_statements": "Precautionary statements",
+      "symbol": "Symbol",
+      "signal": "Signalword",
+      "eu_hazard_satetements": "EU hazard statements (EUH)",
+      "custom": "Custom",
+      "others": "Others",
+      "clp-short": {
+        "clp_reach_headline": "CLP-/REACH-Notice",
+        "clp_reach_subheadline": "Please read full CLP-/REACH-Notfice.",
+        "clp_reach_subheadline_more_linktext": "Read more."
+      },
+      "signal_danger": "Danger!",
+      "signal_attention": "Attention!"
+    },
+    "listing": {
+      "badgeClpNotice": "Watch CLP-notice!"
+    }
+  }
+}

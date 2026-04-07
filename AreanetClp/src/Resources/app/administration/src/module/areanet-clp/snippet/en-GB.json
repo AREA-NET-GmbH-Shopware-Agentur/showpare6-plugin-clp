@@ -1,0 +1,61 @@
+{
+    "global": {
+        "entities": {
+            "areanet_clp": "Product clp"
+        }
+    },
+
+    "areanet-clp": {
+        "general": {
+            "title": "Product clp",
+            "placeholderSearchBar": "Search CLP-entries ..."
+        },
+        "list": {
+            "addEntryText": "Add clp",
+            "columnName": "Name",
+            "columnType": "Type",
+            "columnText": "Text",
+            "columnSignalName": "Signal word",
+            "columnDate": "Date",
+            "columnImage": "GHS-Pictogram",
+            "type_areanet_clp_euh": "EUH-Sentence",
+            "type_areanet_clp_h": "H-Sentence",
+            "type_areanet_clp_p": "P-Sentence",
+            "signal_danger": "Danger",
+            "signal_attention": "Attention",
+            "signal_": "---",
+            "symbol_": "---"
+        },
+        "detail": {
+            "typeOptionEuhName": "EUH-Sentence",
+            "typeOptionHName": "H-Sentence",
+            "typeOptionPName": "P-Sentence",
+            "typeLabel": "Type",
+            "nameLabel": "Name",
+            "textLabel": "Text",
+            "signalNameLabel": "Signal word",
+            "symbolNameLabel": "GHS-Pictogram",
+            "signal_danger": "Danger",
+            "signal_attention": "Attention",
+            "cancelButtonText": "Cancel",
+            "saveButtonText": "Save",
+            "notChangeableAlertTitle": "Notice!",
+            "notChangeableAlertText": "This CLP-Entry is not changeable, because it is shipped and maintained with the plugin. Please add a new entry for modifications.",
+            "placeholder": "Select ...",
+            "assignProductsLabel": "Products"
+        },
+        "notification": {
+            "successTitle": "Success",
+            "success": "The Entry has been saved",
+            "errorTitle": "Error saving the clp"
+        }
+    },
+
+    "sw-product": {
+        "detail": {
+            "areanetCardLabel": "Product Clps",
+            "areanetClpSelectLabel": "Associated declarations",
+            "areanetClpSelectPlaceholder": "Add clp..."
+        }
+    }
+}

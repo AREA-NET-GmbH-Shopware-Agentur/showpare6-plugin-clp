@@ -1,0 +1,55 @@
+{% block areanet_clp_list %}
+    <sw-page class="areanet-clp-list">
+        <template #search-bar>
+            <sw-search-bar initialSearchType="areanet_clp"
+                           :initialSearch="term"
+                           :placeholder="$t('areanet-clp.general.placeholderSearchBar')"
+                           @search="onSearch">
+            </sw-search-bar>
+        </template>
+
+        <template #smart-bar-actions>
+            <sw-language-switch @on-change="onChangeLanguage"></sw-language-switch>
+            <sw-button
+                    variant="primary"
+                    :routerLink="{ name: 'areanet.clp.create' }"
+            >
+                {{ $t('areanet-clp.list.addEntryText') }}
+            </sw-button>
+        </template>
+
+        <template #content>
+            {% block areanet_clp_list_content %}
+                <sw-entity-listing
+                    v-if="items"
+                    :repository="areanetClpRepository"
+                    :columns="columns"
+                    :items="items"
+                    :isLoading="isLoading"
+                    :showSelection="true"
+                    detailRoute="areanet.clp.detail"
+                   >
+
+                    <template #column-createdAt="{ item }">
+                        {{ formatDate(item.createdAt) }}
+                    </template>
+
+                    <template #column-type="{ item }">
+                        {{ generateDynamicTranslation('areanet-clp.list.type', item.type) }}
+                    </template>
+
+                    <template #column-signalName="{ item }">
+                        {{ generateDynamicTranslation('areanet-clp.list.signal', item.signalName) }}
+                    </template>
+
+                    <template #column-ghsId="{ item }">
+                        <sw-container v-if="ghs[item.ghsId]" columns="80px 40px" align="center">
+                            <span v-if="ghs[item.ghsId].name">{{ ghs[item.ghsId].name }}</span>
+                            <img v-if="ghs[item.ghsId].image" :src="'../bundles/areanetclp/storefront/img/clp/' + ghs[item.ghsId].image" :alt="ghs[item.ghsId].name" height="40" />
+                        </sw-container>
+                    </template>
+                </sw-entity-listing>
+            {% endblock %}
+        </template>
+    </sw-page>
+{% endblock %}

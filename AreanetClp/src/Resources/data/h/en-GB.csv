@@ -1,0 +1,105 @@
+H200;Unstable explosive;danger;GHS01
+H201;"Explosive; mass explosion hazard";danger;GHS01
+H202;"Explosive; severe projection hazard";danger;GHS01
+H203;"Explosive; fire, blast or projection hazard";danger;GHS01
+H204;Fire or projection hazard;attention;GHS01
+H205;May mass explode in fire;danger
+H206;"Fire, blast or projection hazard; increased risk of explosion if desensitizing agent is reduced"
+H207;"Fire or projection hazard; increased risk of explosion if desensitizing agent is reduced"
+H208;"Fire hazard; increased risk of explosion if desensitizing agent is reduced"
+H220;Extremely flammable gas;danger;GHS02
+H221;Flammable gas;attention
+H222;Extremely flammable aerosol;danger;GHS02
+H223;Flammable aerosol;attention;GHS02
+H224;Extremely flammable liquid and vapour;danger;GHS02
+H225;Highly flammable liquid and vapour;danger;GHS02
+H226;Flammable liquid and vapour;attention;GHS02
+H227;Combustible liquid
+H228;Flammable solid;danger;GHS02
+H229;Pressurized container: may burst if heated
+H230;May react explosively even in the absence of air
+H231;May react explosively even in the absence of air at elevated pressure and/or temperature
+H232;May ignite spontaneously if exposed to air
+H240;Heating may cause an explosion;danger;GHS01
+H241;Heating may cause a fire or explosion;danger;GHS01
+H242;Heating may cause a fire;danger;GHS02
+H250;Catches fire spontaneously if exposed to air;danger;GHS02
+H251;"Self-heating; may catch fire";danger;GHS02
+H252;"Self-heating in large quantities; may catch fire";attention;GHS02
+H260;In contact with water releases flammable gases which may ignite spontaneously;danger;GHS02
+H261;In contact with water releases flammable gas;danger;GHS02
+H270;"May cause or intensify fire; oxidizer";danger;GHS03
+H271;"May cause fire or explosion; strong oxidizer";danger;GHS03
+H272;"May intensify fire; oxidizer";danger;GHS03
+H280;"Contains gas under pressure; may explode if heated";attention;GHS04
+H281;"Contains refrigerated gas; may cause cryogenic burns or injury";attention;GHS04
+H290;May be corrosive to metals;attention;GHS05
+H300;Fatal if swallowed;danger;GHS06
+H300 + H310;Fatal if swallowed or in contact with skin;danger;GHS06
+H300 + H310 + H330;Fatal if swallowed, in contact with skin or if inhaled;danger;GHS06
+H300 + H330;Fatal if swallowed or if inhaled;danger;GHS06
+H301;Toxic if swallowed;danger;GHS06
+H301 + H311;Toxic if swallowed or in contact with skin;danger;GHS06
+H301 + H311 + H331;Toxic if swallowed, in contact with skin or if inhaled;danger;GHS06
+H301 + H331;Toxic if swallowed or if inhaled;danger;GHS06
+H302;Harmful if swallowed;attention;GHS07
+H302 + H312;Harmful if swallowed or in contact with skin;attention;GHS07
+H302 + H312 + H332;Harmful if swallowed, in contact with skin or if inhaled;attention;GHS07
+H302 + H332;Harmful if swallowed or if inhaled;attention;GHS07
+H303;May be harmful if swallowed
+H303 + H313;May be harmful if swallowed or in contact with skin
+H303 + H313 + H333;May be harmful if swallowed, in contact with skin or if inhaled
+H303 + H333;May be harmful if swallowed or if inhaled
+H304;May be fatal if swallowed and enters airways;danger;GHS08
+H305;May be harmful if swallowed and enters airways
+H310;Fatal in contact with skin;danger;GHS06
+H310 + H330;Fatal in contact with skin or if inhaled;danger;GHS06
+H311;Toxic in contact with skin;danger;GHS06
+H311 + H331;Toxic in contact with skin or if inhaled;danger;GHS06
+H312;Harmful in contact with skin;attention;GHS07
+H312 + H332;Harmful in contact with skin or if inhaled;attention;GHS07
+H313;May be harmful in contact with skin
+H313 + H333;May be harmful in contact with skin or if inhaled
+H314;Causes severe skin burns and eye damage.;danger;GHS05
+H315;Causes skin irritation;attention;GHS07
+H315 + H320;Causes skin and eye irritation;attention;GHS07
+H316;Causes mild skin irritation;danger;GHS05
+H317;May cause an allergic skin reaction;attention;GHS07
+H318;Causes serious eye damage.;danger;GHS05
+H319;Causes serious eye irritation;attention;GHS07
+H320;Causes eye irritation
+H330;Fatal if inhaled;danger;GHS06
+H331;Toxic if inhaled;danger;GHS06
+H332;Harmful if inhaled;attention;GHS07
+H333;May be harmful if inhaled
+H334;May cause allergy or asthma symptoms or breathing difficulties if inhaled;danger;GHS08
+H335;May cause respiratory irritation;attention;GHS07
+H336;May cause drowsiness or dizziness;attention;GHS07
+H340;May cause genetic defects %var1%<state route of exposure if it is conclusively proven that no other routes of exposure cause the hazard>;danger;GHS08
+H341;Suspected of causing genetic defects %var1%<state route of exposure if it is conclusively proven that no other routes of exposure cause the hazard>;attention;GHS08
+H350;May cause cancer %var1%<state route of exposure if it is conclusively proven that no other routes of exposure cause the hazard>;danger;GHS08
+H350i;May cause cancer by inhalation.;danger;GHS08
+H351;Suspected of causing cancer %var1%<state route of exposure if it is conclusively proven that no other routes of exposure cause the hazard>;attention;GHS08
+H360;May damage fertility or the unborn child %var1%<state specific effect if known> %var2%<state route of exposure if it is conclusively proven that no other routes of exposure cause the hazard>;danger;GHS08
+H360D;May damage the unborn child.;danger;GHS08
+H360Df;May damage the unborn child. Suspected of damaging fertility.;danger;GHS08
+H360F;May damage fertility.;danger;GHS08
+H360FD;May damage fertility. May damage the unborn child.;danger;GHS08
+H360Fd;May damage fertility. Suspected of damaging the unborn child.;danger;GHS08
+H361;Suspected of damaging fertility or the unborn child %var1%<state specific effect if known> %var2%<state route of exposure if it is conclusively proven that no other routes of exposure cause the hazard>;attention;GHS08
+H361d;Suspected of damaging the unborn child.;attention;GHS08
+H361f;Suspected of damaging fertility.;attention;GHS08
+H361fd;Suspected of damaging fertility. Suspected of damaging the unborn child.;attention;GHS08
+H362;May cause harm to breast-fed children
+H370;Causes damage to organs %var1%<or state all organs affected, if known> %var2%<state route of exposure if it is conclusively proven that no other routes of exposure cause the hazard>;danger;GHS08
+H371;May cause damage to organs %var1%<or state all organs affected, if known> %var2%<state route of exposure if it is conclusively proven that no other routes of exposure cause the hazard>;attention;GHS08
+H372;Causes damage to organs %var1%<state all organs affected, if known> through prolonged or repeated exposure %var2%<state route of exposure if it is conclusively proven that no other routes of exposure cause the hazard>;danger;GHS08
+H373;May cause damage to organs %var1%<state all organs affected, if known> through prolonged or repeated exposure %var2%<state route of exposure if it is conclusively proven that no other routes of exposure cause the hazard>;attention;GHS08
+H400;Very toxic to aquatic life;attention;GHS09
+H401;Toxic to aquatic life
+H402;Harmful to aquatic life
+H410;Very toxic to aquatic life with long lasting effects;attention;GHS09
+H411;Toxic to aquatic life with long lasting effects;;GHS09
+H412;Harmful to aquatic life with long lasting effects
+H413;May cause long lasting harmful effects to aquatic life
+H420;Harms public health and the environment by destroying ozone in the upper atmosphere
