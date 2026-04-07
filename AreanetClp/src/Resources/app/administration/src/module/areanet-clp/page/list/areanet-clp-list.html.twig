@@ -8,7 +8,7 @@
             </sw-search-bar>
         </template>
 
-        <template #smart-bar-actions>
+        <template slot="smart-bar-actions">
             <sw-language-switch @on-change="onChangeLanguage"></sw-language-switch>
             <sw-button
                     variant="primary"
@@ -18,17 +18,17 @@
             </sw-button>
         </template>
 
-        <template #content>
+        <template slot="content">
             {% block areanet_clp_list_content %}
                 <sw-entity-listing
-                    v-if="items"
-                    :repository="areanetClpRepository"
-                    :columns="columns"
-                    :items="items"
-                    :isLoading="isLoading"
-                    :showSelection="true"
-                    detailRoute="areanet.clp.detail"
-                   >
+                        v-if="items"
+                        :repository="areanetClpRepository"
+                        :columns="columns"
+                        :items="items"
+                        :isLoading="isLoading"
+                        :showSelection="true"
+                        detailRoute="areanet.clp.detail"
+                >
 
                     <template #column-createdAt="{ item }">
                         {{ formatDate(item.createdAt) }}
@@ -48,6 +48,7 @@
                             <img v-if="ghs[item.ghsId].image" :src="'../bundles/areanetclp/storefront/img/clp/' + ghs[item.ghsId].image" :alt="ghs[item.ghsId].name" height="40" />
                         </sw-container>
                     </template>
+
                 </sw-entity-listing>
             {% endblock %}
         </template>

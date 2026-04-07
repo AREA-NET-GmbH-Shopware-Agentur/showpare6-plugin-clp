@@ -1,0 +1,27 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/index.html.twig' %}
+
+{% block page_product_detail_tabs %}
+    {{ parent() }}
+
+    {% block page_product_detail_tabs_areanet_clp_include %}
+        <div class="areanet-clp-bottom">
+            {% if config('AreanetClp.config.bottomDisplayMode') == 'short' %}
+                {% sw_include '@AreanetClp/storefront/page/areanet-clp/short.html.twig' with {
+                    product: page.product,
+                    clp: page.product.extensions.areanetClp
+                } %}
+            {% elseif config('AreanetClp.config.bottomDisplayMode') == 'full' %}
+                {% sw_include '@AreanetClp/storefront/page/areanet-clp/full.html.twig' with {
+                    product: page.product,
+                    clp: page.product.extensions.areanetClp,
+                    showSentenceHeadline: config('AreanetClp.config.showSentenceHeadline'),
+                    showSentenceName: config('AreanetClp.config.showSentenceName'),
+                    showPictogramName: config('AreanetClp.config.showPictogramName'),
+                    id: 'clp'
+                } only
+                %}
+            {% endif %}
+        </div>
+    {% endblock %}
+
+{% endblock %}

@@ -19,39 +19,41 @@
 {% set areanet_clp= areanet_clp|merge(areanet_clp_euh) %}
 {% set areanet_clp= areanet_clp|merge(areanet_clp_p) %}
 
-{% set hasSymbol = false %}
-
-
-{% if areanet_clp|length > 0   %}
-    {% for element in areanet_clp|sort((a, b) => a.ghs.name <=> b.ghs.name) %}
-      {% if ghs_name != element.ghs.name %}
-        {% set hasSymbol = true %}
-        {% set ghs_name = element.ghs.name %}
-      {% endif %}
-    {% endfor %}
-    {% if hasSymbol %}
-      {% block frontend_plugins_areanet_clp_short_overview %}
-          <div class="areanet-clp areanet-clp--short">
-              {% block frontend_plugins_areanet_clp_short_overview_inner %}
-
-                  {% block frontend_plugins_areanet_clp_short_overview_inner_ghs_symbols %}
-                      <div class="clp-ghs-symbols">
-                          {% for element in areanet_clp|sort((a, b) => a.ghs.name <=> b.ghs.name) %}
-                              {% if ghs_name != element.ghs.name and element.ghs.image %}
-                                  <img src="{{ asset('bundles/areanetclp/storefront/img/clp/' ~ element.ghs.image) }}"
-                                       alt="{{ element.ghs.translated.text }}" title="{{ element.ghs.translated.text }}"/>
-                                  {% set ghs_name = element.ghs.name %}
-                              {% endif %}
-                          {% endfor %}
-                      </div>
-                  {% endblock %}
-
-                {% block frontend_plugins_areanet_clp_short_overview_inner_subtext %}
-                  <div class="clp-subtext">{{ 'areanet-clp.detail.clp-short.clp_reach_subheadline'|trans }} <a href="#clp">{{ 'areanet-clp.detail.clp-short.clp_reach_subheadline_more_linktext'|trans }}</a></div>
+{% if areanet_clp|length > 0 %}
+    {% block frontend_plugins_areanet_clp_short_overview %}
+        <div class="areanet-clp areanet-clp--short">
+            {% block frontend_plugins_areanet_clp_short_overview_inner %}
+                {% block frontend_plugins_areanet_clp_short_overview_inner_headline %}
+                    <div class="areanet-clp--title">{{ 'areanet-clp.detail.clp-short.clp_reach_headline'|trans }}</div>
                 {% endblock %}
 
-              {% endblock %}
-          </div>
-      {% endblock %}
-   {% endif %}
+                {% block frontend_plugins_areanet_clp_short_overview_inner_subtext %}
+                    <div class="clp-subtext">{{ 'areanet-clp.detail.clp-short.clp_reach_subheadline'|trans }} <a href="#clp">{{ 'areanet-clp.detail.clp-short.clp_reach_subheadline_more_linktext'|trans }}</a></div>
+                {% endblock %}
+
+                {% block frontend_plugins_areanet_clp_short_overview_inner_ghs_symbols %}
+                    <div class="clp-ghs-symbols">
+                        {% for element in areanet_clp|sort((a, b) => a.ghs.name <=> b.ghs.name) %}
+                            {% if ghs_name != element.ghs.name %}
+                                <img src="{{ asset('bundles/areanetclp/storefront/img/clp/' ~ element.ghs.image) }}"
+                                     alt="{{ element.ghs.translated.text }}" title="{{ element.ghs.translated.text }}"/>
+                                {% set ghs_name = element.ghs.name %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endblock %}
+
+                {% block frontend_plugins_areanet_clp_short_overview_inner_signalword %}
+                    <div class="clp-signalword">
+                        {% for element in areanet_clp|sort((a, b) => a.signal_name <=> b.signal_name) %}
+                            {% if signal_name != element.signal_name and element.signal_name != "" %}
+                                <div class="font-weight-bold">{{ 'areanet-clp.detail.signal'|trans }}: {{ ('areanet-clp.detail.signal_' ~ element.signal_name)|trans }}</div>
+                            {% endif %}
+                            {% set signal_name = element.signal_name %}
+                        {% endfor %}
+                    </div>
+                {% endblock %}
+            {% endblock %}
+        </div>
+    {% endblock %}
 {% endif %}

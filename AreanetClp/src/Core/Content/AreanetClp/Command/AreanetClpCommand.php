@@ -5,13 +5,12 @@ namespace AreanetClp\Core\Content\AreanetClp\Command;
 use AreanetClp\Core\Content\AreanetClp\Service\AreanetClpImportService;
 use Symfony\Component\Console\{Input\InputInterface, Output\OutputInterface};
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Attribute\AsCommand;
 
-#[AsCommand(name: 'areanet:clp:install')]
 class AreanetClpCommand extends Command {
 
     private $areanetClpImportService;
 
+    protected static $defaultName = 'areanet:clp:install';
 
     public function __construct(AreanetClpImportService $areanetClpImportService)
     {

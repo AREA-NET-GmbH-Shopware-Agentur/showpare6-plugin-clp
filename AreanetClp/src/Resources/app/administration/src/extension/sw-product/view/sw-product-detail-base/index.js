@@ -43,14 +43,6 @@ Component.override('sw-product-detail-base', {
             this.$super('createdComponent');
         },
 
-        handleUpdate(entityCollection, props) {
-            if (props && typeof props.updateCurrentValue === 'function') {
-                props.updateCurrentValue(entityCollection);
-            }
-
-            this.getCustomFields(entityCollection);
-        },
-
         areanetClpLoadConfig() {
             var me = this;
 
@@ -77,19 +69,31 @@ Component.override('sw-product-detail-base', {
                 });
         },
 
-         async loadClpProductData() {
-             const entity = await this.productRepository.get(this.$store.state.swProductDetail.productId, Shopware.Context.api, new Criteria().addAssociation('areanetClp').addAssociation('areanetClp.ghs'));
-             this.getCustomFields(entity.extensions.areanetClp, entity);
-        },
-
-        getCustomFields(selectedItems, product) {
-            selectedItems.sort((a, b) => a.name.localeCompare(b.name));
-
-            if(product) {
-                this.$set(this.product, product);
+        async loadClpProductData() {
+            const stateProduct = Shopware.State.get('swProductDetail').product;
+            if (!stateProduct || !stateProduct.id) {
+                return;
             }
 
-            if(this.product.customFields && !this.product.customFields.hasOwnProperty('areanet_clp')) {
+            const criteria = new Criteria();
+            criteria.addAssociation('areanetClp');
+            criteria.addAssociation('areanetClp.ghs');
+
+            const entity = await this.productRepository.get(stateProduct.id, Shopware.Context.api, criteria);
+            this.getCustomFields(entity.extensions.areanetClp);
+        },
+
+        getCustomFields(selectedItems) {
+            if (!selectedItems) {
+                return;
+            }
+
+            selectedItems.sort((a, b) => a.name.localeCompare(b.name));
+
+            if (!this.product.customFields) {
+                this.$set(this.product, 'customFields', {});
+            }
+            if (!this.product.customFields.hasOwnProperty('areanet_clp')) {
                 this.$set(this.product.customFields, 'areanet_clp', {});
                 this.$set(this.product.customFields.areanet_clp, 'init', "1");
             }
