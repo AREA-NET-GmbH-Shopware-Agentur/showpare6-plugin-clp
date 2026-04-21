@@ -4,24 +4,26 @@
     {{ parent() }}
 
     {% block page_product_detail_buy_container_areanet_clp_include %}
-        <div class="areanet-clp-top">
-            {% if config('AreanetClp.config.topDisplayMode') == 'short' %}
-                {% sw_include '@AreanetClp/storefront/page/areanet-clp/short.html.twig' with {
-                    product: page.product,
-                    clp: page.product.extensions.areanetClp
-                } %}
-            {% elseif config('AreanetClp.config.topDisplayMode') == 'full' %}
-                {% sw_include '@AreanetClp/storefront/page/areanet-clp/full.html.twig' with {
-                    product: page.product,
-                    clp: page.product.extensions.areanetClp,
-                    showSentenceHeadline: config('AreanetClp.config.showSentenceHeadline'),
-                    showSentenceName: config('AreanetClp.config.showSentenceName'),
-                    showPictogramName: config('AreanetClp.config.showPictogramName'),
-                    id: 'clp'
-                } only
-                %}
-            {% endif %}
-        </div>
+        {% if page.product.extensions.areanetClp and page.product.extensions.areanetClp|length > 0 %}
+            <div class="areanet-clp-top">
+                {% if config('AreanetClp.config.topDisplayMode') == 'short' %}
+                    {% sw_include '@AreanetClp/storefront/page/areanet-clp/short.html.twig' with {
+                        product: page.product,
+                        clp: page.product.extensions.areanetClp
+                    } %}
+                {% elseif config('AreanetClp.config.topDisplayMode') == 'full' %}
+                    {% sw_include '@AreanetClp/storefront/page/areanet-clp/full.html.twig' with {
+                        product: page.product,
+                        clp: page.product.extensions.areanetClp,
+                        showSentenceHeadline: config('AreanetClp.config.showSentenceHeadline'),
+                        showSentenceName: config('AreanetClp.config.showSentenceName'),
+                        showPictogramName: config('AreanetClp.config.showPictogramName'),
+                        id: 'clp'
+                    } only
+                    %}
+                {% endif %}
+            </div>
+        {% endif %}
     {% endblock %}
 
 {% endblock %}
