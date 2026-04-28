@@ -25,6 +25,11 @@ class ProductExtension extends EntityExtension {
         );
     }
 
+    public function getEntityName(): string
+    {
+        return ProductDefinition::ENTITY_NAME;
+    }
+
     public function getDefinitionClass(): string
     {
         return ProductDefinition::class;

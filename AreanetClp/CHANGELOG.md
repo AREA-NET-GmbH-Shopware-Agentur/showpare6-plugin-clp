@@ -4,6 +4,7 @@
 - Kompatibilität zu Shopware 6.7 (getestet gegen Core 6.7.9.0)
 - composer `require shopware/core` auf `6.7.*` angehoben
 - Geprüft gegen UPGRADE-6.7:
+  - `ProductExtension::getEntityName()` ergänzt (in 6.7 zwingend abstract auf `EntityExtension`)
   - Native Property-Types in `AreanetClpTranslationEntity`, `AreanetClpGhsTranslationEntity` und `AreanetClpCommand` ergänzt
   - Rückgabewerte der Lazy-Association-Getter `getClp()` / `getClpGhs()` auf `?Entity` korrigiert
   - Keine weiteren Code-Anpassungen erforderlich (kein `setTwig`, keine Custom Entities, kein Payment-Handler, kein GenericPageLoader, keine `CustomerRegisterEvent`-Association-Zugriffe)
