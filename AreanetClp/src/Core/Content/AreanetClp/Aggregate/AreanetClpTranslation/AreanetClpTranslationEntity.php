@@ -7,25 +7,13 @@ use Shopware\Core\Framework\DataAbstractionLayer\TranslationEntity;
 
 class AreanetClpTranslationEntity extends TranslationEntity {
 
-    /**
-     * @var string
-     */
-    protected $clpId;
+    protected string $clpId;
 
-    /**
-     * @var string|null
-     */
-    protected $text;
+    protected ?string $text = null;
 
-    /**
-     * @var string|null
-     */
-    protected $signalName;
+    protected ?string $signalName = null;
 
-    /**
-     * @var AreanetClpEntity
-     */
-    protected $clp;
+    protected ?AreanetClpEntity $clp = null;
 
     /**
      * @return string
@@ -50,7 +38,7 @@ class AreanetClpTranslationEntity extends TranslationEntity {
         $this->text = $text;
     }
 
-    public function getClp(): AreanetClpEntity
+    public function getClp(): ?AreanetClpEntity
     {
         return $this->clp;
     }

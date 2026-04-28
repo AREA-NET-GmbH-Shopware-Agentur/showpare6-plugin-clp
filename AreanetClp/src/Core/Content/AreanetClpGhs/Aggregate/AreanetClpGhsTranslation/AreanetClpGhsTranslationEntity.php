@@ -7,20 +7,11 @@ use Shopware\Core\Framework\DataAbstractionLayer\TranslationEntity;
 
 class AreanetClpGhsTranslationEntity extends TranslationEntity {
 
-    /**
-     * @var string
-     */
-    protected $clpGhsId;
+    protected string $clpGhsId;
 
-    /**
-     * @var string|null
-     */
-    protected $text;
+    protected ?string $text = null;
 
-    /**
-     * @var AreanetClpGhsEntity
-     */
-    protected $clpGhs;
+    protected ?AreanetClpGhsEntity $clpGhs = null;
 
     public function getClpGhsId(): string
     {
@@ -42,7 +33,7 @@ class AreanetClpGhsTranslationEntity extends TranslationEntity {
         $this->text = $text;
     }
 
-    public function getClpGhs(): AreanetClpGhsEntity
+    public function getClpGhs(): ?AreanetClpGhsEntity
     {
         return $this->clpGhs;
     }

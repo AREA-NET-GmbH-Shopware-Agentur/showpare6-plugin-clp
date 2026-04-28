@@ -10,7 +10,7 @@ use Symfony\Component\Console\Attribute\AsCommand;
 #[AsCommand(name: 'areanet:clp:install')]
 class AreanetClpCommand extends Command {
 
-    private $areanetClpImportService;
+    private AreanetClpImportService $areanetClpImportService;
 
 
     public function __construct(AreanetClpImportService $areanetClpImportService)
