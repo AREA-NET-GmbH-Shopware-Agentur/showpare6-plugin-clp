@@ -16,8 +16,15 @@ Component.override('sw-product-detail-base', {
         }
     },
 
-    mounted() {
-        this.loadClpProductData();
+    watch: {
+        'product.id': {
+            immediate: true,
+            handler(id) {
+                if (id) {
+                    this.loadClpProductData();
+                }
+            }
+        }
     },
 
     computed: {
