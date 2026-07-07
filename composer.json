@@ -1,6 +1,6 @@
 {
     "name": "areanet/plugin-clp",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "CLP plugin",
     "type": "shopware-platform-plugin",
     "license": "proprietary",
