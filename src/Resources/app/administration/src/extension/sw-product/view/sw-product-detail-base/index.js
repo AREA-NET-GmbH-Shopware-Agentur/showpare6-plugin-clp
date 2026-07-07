@@ -16,8 +16,19 @@ Component.override('sw-product-detail-base', {
         }
     },
 
-    mounted() {
-        this.loadClpProductData();
+    watch: {
+        // The product comes from the Pinia store and is loaded asynchronously; on a page reload
+        // it is not ready yet at mount time. Build the var fields once the areanetClp association
+        // (loaded via the sw-product-detail productCriteria override) is available. `immediate`
+        // also covers the case where the product is already present (e.g. entering an open tab).
+        'product.extensions.areanetClp': {
+            handler(collection) {
+                if (collection) {
+                    this.getCustomFields(collection);
+                }
+            },
+            immediate: true,
+        },
     },
 
     computed: {
@@ -74,20 +85,27 @@ Component.override('sw-product-detail-base', {
                 });
         },
 
-         async loadClpProductData() {
-             // Vue 3 (Shopware 6.7): swProductDetail is a Pinia store, not a Vuex module.
-             const productId = this.productId ?? Shopware.Store.get('swProductDetail').productId;
-             const entity = await this.productRepository.get(productId, Shopware.Context.api, new Criteria().addAssociation('areanetClp').addAssociation('areanetClp.ghs'));
-             this.getCustomFields(entity.extensions.areanetClp, entity);
-        },
+        getCustomFields(selectedItems) {
+            // May be called before the store product is ready (reload) or with an empty selection.
+            if (!this.product || !selectedItems) {
+                return;
+            }
 
-        getCustomFields(selectedItems, product) {
-            selectedItems.sort((a, b) => a.name.localeCompare(b.name));
+            selectedItems.sort((a, b) => (a.name ?? '').localeCompare(b.name ?? ''));
 
-            if(this.product.customFields && !this.product.customFields.hasOwnProperty('areanet_clp')) {
+            // Products without any custom fields have customFields === null; the template binds
+            // product.customFields.areanet_clp[key], so both levels must exist to avoid a TypeError.
+            if(!this.product.customFields) {
+                this.product.customFields = {};
+            }
+            if(!this.product.customFields.hasOwnProperty('areanet_clp')) {
                 this.product.customFields.areanet_clp = { init: "1" };
             }
             selectedItems.some(item => {
+                // Translated field: may be null for the current language; skip such items.
+                if (!item.text) {
+                    return false;
+                }
                 const var1 = this.textFields.hasOwnProperty(item.name + '_var1');
                 const var2 = this.textFields.hasOwnProperty(item.name + '_var2');
                 const labeltext = item.text.replace('%var1%','').replace('%var2%','');
@@ -116,7 +134,7 @@ Component.override('sw-product-detail-base', {
             Object.keys(this.textFields).forEach(key => {
                 const itemFieldVar1 = selectedItems.find(item => item.name + '_var1' === key);
                 const itemFieldVar2 = selectedItems.find(item => item.name + '_var2' === key);
-                const text = this.textFields[key].item.text;
+                const text = this.textFields[key].item.text ?? '';
                 if(
                     (itemFieldVar1 === undefined && !text.includes("%var2%")) ||
                     (itemFieldVar1 === undefined && itemFieldVar2 === undefined)

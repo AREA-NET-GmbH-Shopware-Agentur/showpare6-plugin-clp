@@ -3,11 +3,11 @@
   "entryPoints": {
     "areanet-clp": {
       "css": [
-        "/bundles/areanetclp/administration/assets/areanet-clp-CSXdEgeb.css"
+        "/bundles/areanetclp/administration/assets/areanet-clp-DchF6cT7.css"
       ],
       "dynamic": [],
       "js": [
-        "/bundles/areanetclp/administration/assets/areanet-clp-DZLRaSg-.js"
+        "/bundles/areanetclp/administration/assets/areanet-clp-B7JYe6Vb.js"
       ],
       "legacy": false,
       "preload": []

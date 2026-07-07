@@ -44,14 +44,11 @@
             </template>
         </sw-inherit-wrapper>
 
-        <sw-text-field
-            v-if="product"
-            v-for="(field,key) in textFields"
-            v-model:value="product.customFields.areanet_clp[key]"
-            :key ="key"
-        >
-            <template v-slot:label>
-                <span class="clp-label">
+        {# mt-text-field (Shopware 6.7) has no `label` slot — only a plain-string `label` prop.
+           Render the rich label (image + sentence) as our own element above the field. #}
+        <template v-for="(field,key) in textFields" :key="key">
+            <div v-if="product" class="areanet-clp-var-field">
+                <label class="clp-label">
                     <img
                         v-if="field.item.ghs && field.item.ghs.image != null && field.item.ghs.image != ''"
                         :src="'../bundles/areanetclp/storefront/img/clp/' + field.item.ghs.image"
@@ -60,8 +57,11 @@
                     <span v-else>&nbsp;</span>
                     <b>{{ field.label }}:</b>
                     <span>{{ field.text }}</span>
-                </span>
-            </template>
-        </sw-text-field>
+                </label>
+                <sw-text-field
+                    v-model:value="product.customFields.areanet_clp[key]"
+                />
+            </div>
+        </template>
     </sw-card>
 {% endblock %}
