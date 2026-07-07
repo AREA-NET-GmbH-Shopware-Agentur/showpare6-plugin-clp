@@ -136,7 +136,8 @@ Component.register('areanet-clp-list', {
                     .search(new Criteria(), Context.api)
                     .then((ghsEntities) => {
                         for (const item of ghsEntities) {
-                            this.$set(this.ghs, item.id, item);
+                            // Vue 3 (Shopware 6.7): $set removed; direct assignment is reactive via Proxy.
+                            this.ghs[item.id] = item;
                         }
                     });
             } catch (error) {

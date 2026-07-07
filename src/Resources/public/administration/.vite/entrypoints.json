@@ -1,0 +1,25 @@
+{
+  "base": "/bundles/areanetclp/administration/",
+  "entryPoints": {
+    "areanet-clp": {
+      "css": [
+        "/bundles/areanetclp/administration/assets/areanet-clp-CSXdEgeb.css"
+      ],
+      "dynamic": [],
+      "js": [
+        "/bundles/areanetclp/administration/assets/areanet-clp-DZLRaSg-.js"
+      ],
+      "legacy": false,
+      "preload": []
+    }
+  },
+  "legacy": false,
+  "metadatas": {},
+  "version": [
+    "7.1.0",
+    7,
+    1,
+    0
+  ],
+  "viteServer": null
+}

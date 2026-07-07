@@ -68,30 +68,24 @@ Component.override('sw-product-detail-base', {
                 .then((result) => {
 
                     result.forEach(element => {
-                        me.$set(
-                            me.areanetClpSystemConfigValues,
-                            element.configurationKey.replace('AreanetClp.config.', ''),
-                            element.configurationValue
-                        );
+                        // Vue 3 (Shopware 6.7): $set was removed; direct assignment is reactive via Proxy.
+                        me.areanetClpSystemConfigValues[element.configurationKey.replace('AreanetClp.config.', '')] = element.configurationValue;
                     })
                 });
         },
 
          async loadClpProductData() {
-             const entity = await this.productRepository.get(this.$store.state.swProductDetail.productId, Shopware.Context.api, new Criteria().addAssociation('areanetClp').addAssociation('areanetClp.ghs'));
+             // Vue 3 (Shopware 6.7): swProductDetail is a Pinia store, not a Vuex module.
+             const productId = this.productId ?? Shopware.Store.get('swProductDetail').productId;
+             const entity = await this.productRepository.get(productId, Shopware.Context.api, new Criteria().addAssociation('areanetClp').addAssociation('areanetClp.ghs'));
              this.getCustomFields(entity.extensions.areanetClp, entity);
         },
 
         getCustomFields(selectedItems, product) {
             selectedItems.sort((a, b) => a.name.localeCompare(b.name));
 
-            if(product) {
-                this.$set(this.product, product);
-            }
-
             if(this.product.customFields && !this.product.customFields.hasOwnProperty('areanet_clp')) {
-                this.$set(this.product.customFields, 'areanet_clp', {});
-                this.$set(this.product.customFields.areanet_clp, 'init', "1");
+                this.product.customFields.areanet_clp = { init: "1" };
             }
             selectedItems.some(item => {
                 const var1 = this.textFields.hasOwnProperty(item.name + '_var1');
@@ -104,12 +98,12 @@ Component.override('sw-product-detail-base', {
                     if(item.text.includes("%var2%")) {
                         label = item.name + ' VAR1';
                     }
-                    this.$set(this.textFields, key, {label: label, text: labeltext, item:item});
+                    this.textFields[key] = {label: label, text: labeltext, item:item};
                 }
 
                 if(item.text.includes("%var2%") && !var2) {
                     let key = item.name + '_var2';
-                    this.$set(this.textFields, key, {label: item.name + ' VAR2', text: labeltext, item:item});
+                    this.textFields[key] = {label: item.name + ' VAR2', text: labeltext, item:item};
                 }
             });
             this.textFields = Object.entries(this.textFields)
